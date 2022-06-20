@@ -6,17 +6,11 @@ const sueModel = require("../models/Sue.js");
 // Create Sue
 router.post("/sue/create", async (req, res) => {
     const sue = new sueModel({
-        pet: req.body.pet,
         user: req.body.user,
-        trystsdate: req.body.trystsdate,
+        date: req.body.date,
         status: req.body.status,
-        symptoms: req.body.symptoms,
-        diagnosis: req.body.diagnosis,
-        diagnosisblood: req.body.diagnosisblood,
-        xray: req.body.xray,
-        medicines: req.body.medicines,
-        cost: req.body.cost,
-        debt: req.body.debt
+        description: req.body.description,
+        photo: req.body.photo
     });
     await sue.save()
         .then((u) => res.json({status: "ok", id: u._id}))
@@ -38,17 +32,11 @@ router.get("/sue/:id", async function (req, res) {
 // Update Sue
 router.put("/sue/update/:id", async (req, res) => {
     const response = await sueModel.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), {
-        pet: req.body.pet,
         user: req.body.user,
-        trystsdate: req.body.trystsdate,
+        date: req.body.date,
         status: req.body.status,
-        symptoms: req.body.symptoms,
-        diagnosis: req.body.diagnosis,
-        diagnosisblood: req.body.diagnosisblood,
-        xray: req.body.xray,
-        medicines: req.body.medicines,
-        cost: req.body.cost,
-        debt: req.body.debt
+        description: req.body.description,
+        photo: req.body.photo
     });
     (response) ? res.json({
         status: "ok",
