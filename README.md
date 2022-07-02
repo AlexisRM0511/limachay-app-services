@@ -1,4 +1,4 @@
-# GitHub de Servicios del proyecto Limachay
+# GitHub de Servicios del proyecto Limachay - Grupo 4
  
  Este es el repositorio de los servicios de limachay incluyendo la conexion con la BD en MongoDB. Para correr el proyecto de manera local se tiene que utilizar los siguientes comandos:
  
